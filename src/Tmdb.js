@@ -29,7 +29,7 @@ export default {
           },
           {
             slug : "topreated",
-            title: "Em altas",
+            title: "Em Alta",
             items: await basicFetch('/movie/top_rated?')
           },
           {
