@@ -58,5 +58,21 @@ export default {
             items: await basicFetch('/discover/movie?with_genres=99&')          
           }
         ]
+      },
+      getMovieInfo: async (id, type) => {
+        let info = {};
+        if(id){
+          switch(type){
+            case 'movie':
+              info = await basicFetch(`/movie/${id}?`);
+              break;
+            case 'tv':
+              info = await basicFetch(`/tv/${id}?`);
+              break;
+            default:
+              info = null;
+          }
+        }
+        return info;
       }
 }
