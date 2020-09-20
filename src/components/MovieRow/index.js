@@ -1,12 +1,39 @@
-import React from "react";
+import React, {useState} from "react";
 import "./styles.css";
+import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 
 export default ({ title, items }) => {
+  const [scrollX, setScrollX] = useState(-400);
+
+  const handleLeftArrow = ( ) => {
+    let x = scrollX + Math.floor( window.innerWidth/2 );
+    if(x > 0)
+      x = 0;
+    setScrollX(x)
+  }
+
+  const handleRightArrow = ( ) => {
+    
+
+  }
+
   return (
     <div className="movie-row">
       <h2>{title}</h2>
+      <div className="movie-row-left" onClick={handleLeftArrow}>
+        <NavigateBeforeIcon style={{fontSize:50}}/>
+      </div>
+
+      <div className="movie-row-right" onClick={handleRightArrow}>
+        <NavigateNextIcon style={{fontSize:50}}/>
+      </div>
+
       <div className="movie-row-list-area">
-        <div className="movie-row-list">
+        <div className="movie-row-list" style={{
+          marginLeft:scrollX,
+          width: items.results.length * 150
+        }}>
           {items.results.length > 0 &&
             items.results.map((item, key) => (
               <div key={key} className="movie-row-list-item">
@@ -19,6 +46,9 @@ export default ({ title, items }) => {
             ))}
         </div>
       </div>
+
+      
+
     </div>
   );
 };
