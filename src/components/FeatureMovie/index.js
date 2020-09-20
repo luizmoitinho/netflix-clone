@@ -29,7 +29,7 @@ export default function ({ item }) {
             {item.overview}
           </div>
           <div className="featured-buttons">
-            <a href={`/watch/${item.id}`} class="watch-button"> ► Assistir</a>
+            <a href={`/watch/${item.id}`} className="watch-button"> ► Assistir</a>
             <a href={`/list/add/${item.id}`} className="my-list-button">+ Minha Lista</a>
           </div>
           <div className="featured-genres">
