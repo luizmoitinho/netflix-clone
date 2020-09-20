@@ -4,6 +4,10 @@ import "./style.css";
 export default function ({ item }) {
   const formatedDate = new Date(item.first_air_date);
   let genres = [];
+
+  if(item.overview.length>200)
+    item.overview = item.overview.substr(0,199)+" [...]"
+
   for(let i in item.genres){
     genres.push(item.genres[i].name);
   }
@@ -26,7 +30,7 @@ export default function ({ item }) {
             <div className="featured-seasons">{item.number_of_seasons} temporada{item.number_of_seasons > 1 ? 's':''}</div>
           </div>
           <div className="featured-description">
-            {item.overview}
+            { item.overview}
           </div>
           <div className="featured-buttons">
             <a href={`/watch/${item.id}`} className="watch-button"> ► Assistir</a>
