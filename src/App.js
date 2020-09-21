@@ -12,6 +12,8 @@ export default function App(){
   const [featureData, setFeatureData] = useState(null);
   const [blackHeader, setBlackHeader] = useState(false);
 
+  const loading_gif = require('./assets/img/loading.gif');
+
   useEffect( () =>{
     const loadAll = async () => {
       // movie list
@@ -37,7 +39,6 @@ export default function App(){
         setBlackHeader(true);
       else
         setBlackHeader(false);
-
     }
 
     window.addEventListener('scroll',scrollListner);
@@ -47,7 +48,6 @@ export default function App(){
     }
 
   },[]);
-
   return(
     
     <div className="page-home">
@@ -75,6 +75,13 @@ export default function App(){
                 Dados originzados do site <a href="https://www.themoviedb.org/">Themoviedb.org</a>
               </div>
       </footer>
+      {movieList.length <= 0 &&
+        <div className="loading">
+          <img src={loading_gif} alt=""/>
+        </div>
+      }
+
+
     </div>
   );
 };
