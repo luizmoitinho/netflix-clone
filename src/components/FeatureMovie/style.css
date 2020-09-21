@@ -22,7 +22,7 @@
 }
 
 .featured-name{
-  font-size: 3rem;
+  font-size: 70px;
   font-weight: bold;
 }
 
@@ -89,5 +89,33 @@
   margin-top:15px;
   font-size: 18px;
   color: #999;
+
+}
+
+
+@media (max-width:760px){
+  .featured{
+    height: 80vh;
+  }
+  .featured-name{
+    padding-top: 70px;
+    font-size: 40px;
+  }
+  .featured-info{
+    font-size: 16px;
+  }
+
+  .featured-description{
+    font-size: 14px;
+    max-width: 100%;
+    margin-right:30px ;
+  }
+  .watch-button,
+  .my-list-button{
+    font-size: 16px;
+  }
+  .featured-genres{
+    font-size: 14px;
+  }
 
 }
