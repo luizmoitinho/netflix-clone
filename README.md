@@ -14,4 +14,4 @@ Clone da interface principal da plataforma **Netflix**, sendo as séries vindas 
 ## Get Started
 1. Clone o projeto ou baixe-o em sua máquina
 2. Acesse a pasta raiz ("netflix-clone-react")
-3. Digite o comando ```yarn start ```
+3. Digite o comando no terminal ```yarn start ```
